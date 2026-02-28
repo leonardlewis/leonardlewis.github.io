@@ -7,28 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
-    /* ============================================
-       PERSONAL WEBSITE — EASY TO EDIT!
-       
-       HOW TO CUSTOMIZE:
-       1. Change colors below (--ink, --paper, --accent, etc.)
-       2. Search for "EDIT:" comments to find content to change
-       3. Add new blog posts or projects by copying existing ones
-       ============================================ */
-
     :root {
       --ink: #1a1a18;
       --paper: #f5f0e8;
-      --cream: #ede7db;
       --accent: #c44d28;
-      --accent-light: #e8683f;
       --muted: #7a756b;
       --rule: #d4cdc0;
-      --card-bg: #faf7f2;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -40,35 +27,22 @@
       font-size: 17px;
     }
 
-    /* --- UTILITY --- */
     .container {
-      max-width: 1100px;
+      max-width: 700px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--accent-light); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* --- HEADER / NAV --- */
+    /* --- HEADER --- */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
+      padding: 2.5rem 0 0;
+      text-align: center;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .nav-logo {
+    .site-name {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.3rem;
       font-weight: 700;
@@ -76,54 +50,35 @@
       letter-spacing: -0.02em;
     }
 
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    nav {
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
 
-    .nav-links a {
+    nav a {
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--ink); }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--ink);
-      transition: 0.3s;
-    }
+    nav a:hover { color: var(--ink); text-decoration: none; }
 
     /* --- HERO --- */
     .hero {
-      padding: 6rem 0 4rem;
-      border-bottom: 2px solid var(--ink);
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      padding: 5rem 0 4rem;
+      text-align: center;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-size: clamp(2.2rem, 4vw, 3rem);
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.2;
       letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero h1 em {
@@ -132,36 +87,15 @@
     }
 
     .hero-text {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 2rem;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
     }
-
-    .hero-photo {
-      position: relative;
-      aspect-ratio: 4/5;
-      overflow: hidden;
-    }
-
-    .hero-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      background: var(--cream);
-      border: 1px solid var(--rule);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    /* To use a real photo, replace the placeholder div with:
-       <img src="your-photo.jpg" alt="Your Name" style="width:100%;height:100%;object-fit:cover;"> */
 
     .hero-meta {
       display: flex;
+      justify-content: center;
       gap: 2rem;
       font-size: 0.82rem;
       text-transform: uppercase;
@@ -170,548 +104,166 @@
       font-weight: 600;
     }
 
-    .hero-meta span::before {
-      content: '◆ ';
-      color: var(--accent);
-      font-size: 0.6em;
-    }
-
-    /* --- SECTION HEADERS --- */
+    /* --- SECTIONS --- */
     .section {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .section-number {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 0.85rem;
-      color: var(--accent);
-      font-style: italic;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--rule);
     }
 
     .section-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 400;
       letter-spacing: -0.02em;
+      margin-bottom: 2rem;
     }
 
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
-    }
-
-    /* --- PORTFOLIO / PROJECTS --- */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--rule);
-      padding: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-    }
-
-    .project-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-card h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .project-link {
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .project-link::after { content: ' →'; }
-
-    /* --- BLOG --- */
-    .blog-list { display: flex; flex-direction: column; gap: 0; }
-
-    .blog-entry {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 2rem;
-      padding: 2rem 0;
+    /* --- LIST ITEMS (shared) --- */
+    .item {
+      padding: 1.25rem 0;
       border-bottom: 1px solid var(--rule);
-      align-items: baseline;
-      transition: background 0.2s;
+    }
+    .item:first-child { border-top: 1px solid var(--rule); }
+
+    .item h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
     }
 
-    .blog-entry:first-child { border-top: 1px solid var(--rule); }
+    .item h3 a { color: var(--ink); }
+    .item h3 a:hover { color: var(--accent); }
 
-    .blog-date {
+    .item p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .item .meta {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--muted);
+      margin-bottom: 0.3rem;
     }
 
-    .blog-entry h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 0.4rem;
-    }
-
-    .blog-entry h3 a { color: var(--ink); }
-    .blog-entry h3 a:hover { color: var(--accent); }
-
-    .blog-excerpt {
+    .section-note {
       color: var(--muted);
       font-size: 0.95rem;
-    }
-
-    /* --- RESUME --- */
-    .resume-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .resume-column h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.2rem;
-      font-weight: 400;
-      font-style: italic;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .resume-item { margin-bottom: 2rem; }
-
-    .resume-item h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.15rem;
-    }
-
-    .resume-item .meta {
-      font-size: 0.82rem;
-      color: var(--accent);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
-    }
-
-    .resume-item p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-    }
-
-    .skills-list li {
-      background: var(--cream);
-      border: 1px solid var(--rule);
-      padding: 0.3rem 0.9rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    /* --- LINKS --- */
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
-    .link-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.25rem 1.5rem;
-      background: var(--card-bg);
-      border: 1px solid var(--rule);
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .link-card:hover {
-      transform: translateX(4px);
-      border-color: var(--accent);
-    }
-
-    .link-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--cream);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .link-card .link-label {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--ink);
-    }
-
-    .link-card .link-url {
-      font-size: 0.78rem;
-      color: var(--muted);
+      line-height: 1.7;
     }
 
     /* --- FOOTER --- */
     footer {
       padding: 3rem 0;
       text-align: center;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--muted);
+      border-top: 1px solid var(--rule);
     }
-
-    footer .footer-rule {
-      width: 60px;
-      height: 1px;
-      background: var(--rule);
-      margin: 0 auto 1.5rem;
-    }
-
-    /* --- ANIMATIONS --- */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-inner > * {
-      animation: fadeUp 0.8s ease-out both;
-    }
-    .hero-inner > *:nth-child(2) {
-      animation-delay: 0.15s;
-    }
-
-    .project-card, .blog-entry, .link-card {
-      animation: fadeUp 0.6s ease-out both;
-    }
-    .project-card:nth-child(2), .blog-entry:nth-child(2), .link-card:nth-child(2) { animation-delay: 0.1s; }
-    .project-card:nth-child(3), .blog-entry:nth-child(3), .link-card:nth-child(3) { animation-delay: 0.2s; }
 
     /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .hero-photo { max-width: 280px; }
-      .resume-grid { grid-template-columns: 1fr; }
-      .blog-entry {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-      }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--paper);
-        padding: 1.5rem 2rem;
-        border-bottom: 1px solid var(--rule);
-        gap: 1rem;
-      }
+    @media (max-width: 600px) {
+      .hero { padding: 3.5rem 0 3rem; }
+      nav { gap: 1.25rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============ NAVIGATION ============ -->
   <header>
-    <nav>
-      <!-- EDIT: Your name / logo text -->
-      <a href="#" class="nav-logo">Leonard Lewis</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#links">Links</a></li>
-      </ul>
-      <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+    <div class="container">
+      <a href="#" class="site-name">Leonard Lewis</a>
+      <nav>
+        <a href="#reading">Reading</a>
+        <a href="#writing">Writing</a>
+        <a href="#investing">Investing</a>
+      </nav>
+      <br>
+    </div>
   </header>
 
-  <!-- ============ HERO / ABOUT ============ -->
-  <section class="hero">
+  <!-- ============ READING ============ -->
+  <section class="section" id="reading">
     <div class="container">
-      <div class="hero-inner">
-        <div>
-          <!-- EDIT: Your headline. Use <em> for italic accent color -->
-          <h1>Hi, I'm <em>Leonard Lewis</em>.</h1>
-          <!-- EDIT: Your bio / intro paragraph -->
-          <p class="hero-text">
-            I'm a writer, designer, and builder based in New York City.
-            I make things for the web and write about creativity, technology,
-            and the space in between.
-          </p>
-          <!-- EDIT: Quick descriptors about you -->
-          <div class="hero-meta">
-            <span>Writer</span>
-            <span>Designer</span>
-            <span>Builder</span>
-          </div>
+      <h2 class="section-title">Reading</h2>
+      <p class="section-note">Books and essays that have shaped how I think.</p>
+      <div>
+        <div class="item">
+          <h3>Poor Charlie's Almanack</h3>
+          <p>Charlie Munger's mental models and multidisciplinary thinking.</p>
         </div>
-        <div class="hero-photo">
-          <!-- EDIT: Replace this div with an <img> tag for your photo -->
-          <div class="hero-photo-placeholder">
-            Your photo here<br>(replace this div with an &lt;img&gt; tag)
-          </div>
+        <div class="item">
+          <h3>The Most Important Thing</h3>
+          <p>Howard Marks on risk, market cycles, and second-level thinking.</p>
+        </div>
+        <div class="item">
+          <h3>On Writing Well</h3>
+          <p>William Zinsser's guide to clarity and simplicity in nonfiction.</p>
+        </div>
+        <div class="item">
+          <h3>More...</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PROJECTS / PORTFOLIO ============ -->
-  <section class="section" id="projects">
+  <!-- ============ WRITING ============ -->
+  <section class="section" id="writing">
     <div class="container">
-      <div class="section-header">
-        <span class="section-number">i.</span>
-        <h2 class="section-title">Projects</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="projects-grid">
-
-        <!-- EDIT: Project 1 — copy this block to add more projects -->
-        <div class="project-card">
-          <div class="project-tag">Web Design</div>
-          <h3>Project Title One</h3>
-          <p>A short description of what this project is about and what you did. Keep it to 1–2 sentences.</p>
-          <a href="#" class="project-link">View project</a>
+      <h2 class="section-title">Writing</h2>
+      <div>
+        <div class="item">
+          <div class="meta">2026.02.10</div>
+          <h3><a href="#">Why I Started Writing Online</a></h3>
+          <p>A short teaser for the blog post goes here. One or two sentences to hook the reader.</p>
         </div>
-
-        <!-- EDIT: Project 2 -->
-        <div class="project-card">
-          <div class="project-tag">Writing</div>
-          <h3>Project Title Two</h3>
-          <p>Another short description. Explain the problem you solved or the thing you made.</p>
-          <a href="#" class="project-link">View project</a>
+        <div class="item">
+          <div class="meta">2026.01.22</div>
+          <h3><a href="#">Tools I Use Every Day</a></h3>
+          <p>Another post preview. Keep these short — people will click through if they're interested.</p>
         </div>
-
-        <!-- EDIT: Project 3 -->
-        <div class="project-card">
-          <div class="project-tag">Side Project</div>
-          <h3>Project Title Three</h3>
-          <p>One more project. You can add as many of these cards as you like by copying the block.</p>
-          <a href="#" class="project-link">View project</a>
+        <div class="item">
+          <div class="meta">2025.12.15</div>
+          <h3><a href="#">Lessons From My First Year of Investing</a></h3>
+          <p>A reflection on getting started, making mistakes, and learning what matters.</p>
         </div>
-
+        <div class="item">
+          <h3>More...</h3>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ BLOG ============ -->
-  <section class="section" id="blog">
+  <!-- ============ INVESTING ============ -->
+  <section class="section" id="investing">
     <div class="container">
-      <div class="section-header">
-        <span class="section-number">ii.</span>
-        <h2 class="section-title">Writing</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="blog-list">
-
-        <!-- EDIT: Blog post 1 — copy this block to add more posts -->
-        <div class="blog-entry">
-          <span class="blog-date">2026.02.10</span>
-          <div>
-            <h3><a href="#">Why I Started Writing Online</a></h3>
-            <p class="blog-excerpt">A short teaser for the blog post goes here. One or two sentences to hook the reader.</p>
-          </div>
+      <h2 class="section-title">Investing</h2>
+      <p class="section-note">I think about investing as a long-term, patient process. Here are some themes I follow.</p>
+      <div>
+        <div class="item">
+          <h3>Compounding</h3>
+          <p>Small, consistent returns over long periods of time.</p>
         </div>
-
-        <!-- EDIT: Blog post 2 -->
-        <div class="blog-entry">
-          <span class="blog-date">2026.01.22</span>
-          <div>
-            <h3><a href="#">Tools I Use Every Day</a></h3>
-            <p class="blog-excerpt">Another post preview. Keep these short — people will click through if they're interested.</p>
-          </div>
+        <div class="item">
+          <h3>Margin of Safety</h3>
+          <p>Buying assets for less than they're worth and leaving room for error.</p>
         </div>
-
-        <!-- EDIT: Blog post 3 -->
-        <div class="blog-entry">
-          <span class="blog-date">2025.12.15</span>
-          <div>
-            <h3><a href="#">Lessons From My First Year of Freelancing</a></h3>
-            <p class="blog-excerpt">A reflection on getting started, finding clients, and learning what matters.</p>
-          </div>
+        <div class="item">
+          <h3>Circle of Competence</h3>
+          <p>Staying within what you understand and expanding slowly.</p>
         </div>
-
+        <div class="item">
+          <h3>More...</h3>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ RESUME ============ -->
-  <section class="section" id="resume">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">iii.</span>
-        <h2 class="section-title">Resume</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="resume-grid">
-
-        <!-- EDIT: Left column — Experience -->
-        <div class="resume-column">
-          <h3>Experience</h3>
-
-          <div class="resume-item">
-            <h4>Job Title</h4>
-            <div class="meta">Company Name · 2023 – Present</div>
-            <p>Brief description of what you did and what you accomplished in this role.</p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Previous Job Title</h4>
-            <div class="meta">Another Company · 2020 – 2023</div>
-            <p>What you worked on and the impact you had.</p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Earlier Role</h4>
-            <div class="meta">Startup Inc. · 2018 – 2020</div>
-            <p>A quick summary of your responsibilities and achievements.</p>
-          </div>
-        </div>
-
-        <!-- EDIT: Right column — Education & Skills -->
-        <div class="resume-column">
-          <h3>Education</h3>
-
-          <div class="resume-item">
-            <h4>Degree Name</h4>
-            <div class="meta">University Name · 2018</div>
-            <p>Any honors, relevant coursework, or activities.</p>
-          </div>
-
-          <h3 style="margin-top: 2rem;">Skills</h3>
-          <!-- EDIT: Add or remove skills below -->
-          <ul class="skills-list">
-            <li>HTML & CSS</li>
-            <li>Writing</li>
-            <li>Design</li>
-            <li>Photography</li>
-            <li>JavaScript</li>
-            <li>Figma</li>
-            <li>Project Management</li>
-            <li>Marketing</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LINKS ============ -->
-  <section class="section" id="links">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">iv.</span>
-        <h2 class="section-title">Find Me</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="links-grid">
-
-        <!-- EDIT: Link 1 — change href, icon, and label -->
-        <a href="https://github.com/yourusername" class="link-card" target="_blank">
-          <div class="link-icon">⌨</div>
-          <div>
-            <div class="link-label">GitHub</div>
-            <div class="link-url">github.com/yourusername</div>
-          </div>
-        </a>
-
-        <!-- EDIT: Link 2 -->
-        <a href="https://twitter.com/yourusername" class="link-card" target="_blank">
-          <div class="link-icon">✦</div>
-          <div>
-            <div class="link-label">Twitter / X</div>
-            <div class="link-url">@yourusername</div>
-          </div>
-        </a>
-
-        <!-- EDIT: Link 3 -->
-        <a href="https://linkedin.com/in/yourusername" class="link-card" target="_blank">
-          <div class="link-icon">◉</div>
-          <div>
-            <div class="link-label">LinkedIn</div>
-            <div class="link-url">linkedin.com/in/yourusername</div>
-          </div>
-        </a>
-
-        <!-- EDIT: Link 4 -->
-        <a href="mailto:you@email.com" class="link-card">
-          <div class="link-icon">✉</div>
-          <div>
-            <div class="link-label">Email</div>
-            <div class="link-url">you@email.com</div>
-          </div>
-        </a>
-
-        <!-- EDIT: Link 5 — add more by copying a link-card block -->
-        <a href="https://youtube.com/@yourusername" class="link-card" target="_blank">
-          <div class="link-icon">▶</div>
-          <div>
-            <div class="link-label">YouTube</div>
-            <div class="link-url">youtube.com/@yourusername</div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
-      <div class="footer-rule"></div>
-      <!-- EDIT: Footer text -->
-      <p>&copy; 2026 Your Name. Built by hand with HTML & CSS.</p>
+      <p>&copy; 2026 Leonard Lewis</p>
     </div>
   </footer>
 
