@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading — Leonard Lewis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --paper: #ffffff;
+      --accent: #c44d28;
+      --muted: #7a756b;
+      --rule: #d4cdc0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      padding: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .back {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .back:hover { color: var(--ink); text-decoration: none; }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin: 3rem 0 0.5rem;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .item {
+      padding: 1.25rem 0;
+    }
+
+    .item h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .item h3 a { color: var(--ink); }
+    .item h3 a:hover { color: var(--accent); text-decoration: none; }
+
+    .item p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="site-name" style="color:var(--ink);text-decoration:none;">Leonard Lewis</a>
+      <a href="index.html" class="back">← Back</a>
+    </header>
+
+    <h1>Reading</h1>
+    <p class="section-note">Some of my favorites, along with one thing I took away from each.</p>
+
+    <div class="item">
+      <h3><a href="https://www.amazon.com/Fooled-Randomness-Hidden-Markets-Incerto/dp/0812975219" target="_blank">Fooled by Randomness</a></h3>
+      <p>Everything about statistics and probability changes when you go from a controlled environment, like a game, to an uncontrolled environment, like a free market.</p>
+    </div>
+    <div class="item">
+      <h3><a href="https://www.amazon.com/Falling-Upward-Spirituality-Halves-Life/dp/0470907754" target="_blank">Falling Upward</a></h3>
+      <p>Your ego won't let you understand some things until you fail.</p>
+    </div>
+    <div class="item">
+      <h3><a href="https://www.amazon.com/Why-We-Get-Fat-About/dp/0307474259" target="_blank">Why We Get Fat</a></h3>
+      <p>"Expert consensus" is often just received wisdom of the last few years or decades.</p>
+    </div>
+    <div class="item">
+      <h3>More to come...</h3>
+    </div>
+
+    <footer>&copy; 2026 Leonard Lewis</footer>
+  </div>
+</body>
+</html>

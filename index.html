@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leonard Lewis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #1a1a18;
-      --paper: #f5f0e8;
+      --paper: #ffffff;
       --accent: #c44d28;
       --muted: #7a756b;
       --rule: #d4cdc0;
@@ -19,225 +19,61 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Source Sans 3', Georgia, serif;
+      font-family: 'Source Sans 3', sans-serif;
       background: var(--paper);
       color: var(--ink);
       font-weight: 300;
       line-height: 1.7;
       font-size: 17px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .container {
       max-width: 700px;
-      margin: 0 auto;
+      width: 100%;
       padding: 0 2rem;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* --- HEADER --- */
-    header {
-      padding: 2.5rem 0 0;
-      text-align: center;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .site-name {
-      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.3rem;
       font-weight: 700;
-      color: var(--ink);
       letter-spacing: -0.02em;
+      margin-bottom: 3rem;
     }
 
     nav {
-      margin-top: 0.75rem;
       display: flex;
-      justify-content: center;
-      gap: 2rem;
+      flex-direction: column;
+      gap: 0;
     }
 
     nav a {
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-    nav a:hover { color: var(--ink); text-decoration: none; }
-
-    /* --- HERO --- */
-    .hero {
-      padding: 5rem 0 4rem;
-      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--ink);
+      padding: 1rem 0;
+      transition: color 0.15s;
     }
 
-    .hero h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero h1 em {
-      font-style: italic;
+    nav a:hover {
       color: var(--accent);
-    }
-
-    .hero-text {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 500px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    /* --- SECTIONS --- */
-    .section {
-      padding: 3.5rem 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.6rem;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-    }
-
-    /* --- LIST ITEMS (shared) --- */
-    .item {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .item:first-child { border-top: 1px solid var(--rule); }
-
-    .item h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
-    }
-
-    .item h3 a { color: var(--ink); }
-    .item h3 a:hover { color: var(--accent); }
-
-    .item p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .item .meta {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .section-note {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    /* --- FOOTER --- */
-    footer {
-      padding: 3rem 0;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--rule);
-    }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 600px) {
-      .hero { padding: 3.5rem 0 3rem; }
-      nav { gap: 1.25rem; }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="container">
-      <a href="#" class="site-name">Leonard Lewis</a>
-      <nav>
-        <a href="#reading">Reading</a>
-        <a href="#writing">Writing</a>
-        <a href="#investing">Investing</a>
-      </nav>
-      <br>
-    </div>
-  </header>
-
-  <!-- ============ READING ============ -->
-  <section class="section" id="reading">
-    <div class="container">
-      <h2 class="section-title">Reading</h2>
-      <p class="section-note">Some of my favorites, along with one thing I took away from each.</p>
-      <div>
-        <div class="item">
-          <h3><a href="https://www.amazon.com/Fooled-Randomness-Hidden-Markets-Incerto/dp/0812975219" target="_blank">Fooled by Randomness</a></h3>
-          <p>Everything about statistics and probability changes when you go from a controlled environment, like a game, to an uncontrolled environment, like a free market.</p>
-        </div>
-        <div class="item">
-          <h3><a href="https://www.amazon.com/Falling-Upward-Spirituality-Halves-Life/dp/0470907754" target="_blank">Falling Upward</a></h3>
-          <p>Your ego won't let you understand some things until you fail.</p>
-        </div>
-        <div class="item">
-          <h3><a href="https://www.amazon.com/Why-We-Get-Fat-About/dp/0307474259" target="_blank">Why We Get Fat</a></h3>
-          <p>"Expert consensus" is often just received wisdom of the last few years or decades.</p>
-        </div>
-        <div class="item">
-          <h3>More to come...</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WRITING ============ -->
-  <section class="section" id="writing">
-    <div class="container">
-      <h2 class="section-title">Writing</h2>
-      <div>
-        <div class="item">
-          <h3>Coming soon...</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ INVESTING ============ -->
-  <section class="section" id="investing">
-    <div class="container">
-      <h2 class="section-title">Investing</h2>
-      <p class="section-note">I have a very small number of high-conviction opinions about investing as a non-specialized retail person.</p>
-      <div>
-        <div class="item">
-          <h3>Coming soon...</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Leonard Lewis</p>
-    </div>
-  </footer>
-
+  <div class="container">
+    <div class="site-name">Leonard Lewis</div>
+    <nav>
+      <a href="reading.html">Reading</a>
+      <a href="writing.html">Writing</a>
+      <a href="investing.html">Investing</a>
+    </nav>
+  </div>
 </body>
 </html>
